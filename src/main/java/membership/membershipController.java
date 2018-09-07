@@ -1,15 +1,17 @@
 package membership;
 
+import org.apache.catalina.connector.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value="/membership")
+
 public class membershipController {
 
-	@RequestMapping(value="/login")
-	public void login() {
-		//return "login";
+	@RequestMapping(value="/membership", method = RequestMethod.GET)
+	public String login() {
+		return "login";
 	}
 	
 }
