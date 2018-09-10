@@ -11,7 +11,11 @@ public class membershipController {
 
 	@RequestMapping(value="/membership", method = RequestMethod.GET)
 	public String login() {
-		return "login";
+		return "membership/login";
 	}
+	
+/*	public String loginProxy() {
+		
+	}*/
 	
 }
