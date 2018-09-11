@@ -12,12 +12,13 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<util:properties id="applicationProperties"
 		location="classpath:/properties/application.#{systemProperties['spring.profiles.active']}.properties" />
-
+		
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource"
-		p:driverClassName="com.mysql.jdbc.Driver"
-		p:url="jdbc:mysql://210.16.195.113:3306/sample01?serverTimezone=UTC"
-		p:username="uber_test" p:password="uber1234" />
+		p:driverClassName="#{applicationProperties['db.driverClassName']}"
+		p:url="#{applicationProperties['db.url']}"
+		p:username="#{applicationProperties['db.username']}" 
+		p:password="#{applicationProperties['db.password']}" />
 
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean"
