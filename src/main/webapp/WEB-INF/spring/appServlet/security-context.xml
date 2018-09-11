@@ -8,16 +8,37 @@
 			http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<http auto-config='true'>
-        <intercept-url pattern="/*" access="ROLE_USER" />
+<context:component-scan base-package="security" />	
+
+	<http auto-config="true" use-expressions="true" access-denied-page="/denided">
+        <!-- <intercept-url pattern="/*" access="ROLE_USER" /> -->
+        
+        <form-login
+        	login-page="/login"
+        	username-parameter="user_id"
+        	password-parameter="password"
+        	authentication-failure-url="/loginfailure"
+        	default-target-url="/"
+        	always-use-default-target="false"
+        />
+        
+        <logout
+        	invalidate-session="true"
+        	logout-success-url="/signin"
+        	logout-url="/signout"
+        />
+        	
     </http>
        
     <authentication-manager>
         <authentication-provider>
+        	<password-encoder ref="passwordEncoder"/>
             <user-service>
-                <user name="guest" password="guest" authorities="ROLE_USER"/>    
+                <user name="guest" password="35675e68f4b5af7b995d9205ad0fc43842f16450" authorities="ROLE_USER"/>    
             </user-service>
         </authentication-provider>
     </authentication-manager>
+    
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
 </beans:beans>

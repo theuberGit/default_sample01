@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class membershipController {
 
-	@RequestMapping(value="/membership", method = RequestMethod.GET)
+/*	@RequestMapping(value="/membership", method = RequestMethod.GET)
 	public String login() {
 		return "membership/login";
-	}
+	}*/
 	
 /*	public String loginProxy() {
 		
