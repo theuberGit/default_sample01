@@ -3,6 +3,7 @@ package security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,7 +16,11 @@ public class loginController {
 	private PasswordEncoder passwordEncoder;
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String signin() {
+	public String signin(Model model) {
+		
+		String show_password = passwordEncoder.encodePassword("guest", null);
+		
+		System.out.println(show_password);
 		
 		return "/membership/login";
 	}
