@@ -83,9 +83,9 @@ function create(){
     $("#captcha img").attr("src", "/captcha?"+Math.random());
 }
 function login(){
-	if(!$('#username').required()) return false;
-	if(!$('#password').required()) return false;
-	if(!$('#captchaInput').required()) return false;
+	//if(!$('#username').required()) return false;
+	//if(!$('#password').required()) return false;
+	//if(!$('#captchaInput').required()) return false;
 	
 	$('#loginForm').submit();	
 }
