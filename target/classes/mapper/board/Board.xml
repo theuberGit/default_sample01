@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="org.test.sample01.dao.board.BoardDao">
+	
+	<resultMap id="boardMap" type="org.test.sample01.dto.board.Board">
+		<result property="idx" column="IDX" />
+		<result property="title" column="TITLE" />
+	</resultMap>					
+
+	<select id="findAll" resultMap="boardMap">
+		SELECT IDX
+			  ,TITLE
+		FROM TEST_BOARD
+		WHERE 1=1
+		
+	</select>
+	
+</mapper>	
