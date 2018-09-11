@@ -64,7 +64,7 @@ input.custom_chk:checked + label:after{content:"\2714"; position:absolute; left:
 /* table */
 table{width:100%;}
 table th.required:after{content:"*"; display:inline-block; margin-left:3px; color:#f69679;}
-table.blue{background:url(/resources/images/mypage/mypage_bar.jpg) 0 top no-repeat;}
+table.blue{background:url(/resources/images/support/supportlist_bar.jpg) 0 top no-repeat;}
 table .center td , table .center th{text-align:center;}
 .table_tit{margin-bottom:10px; font-size:18px; line-height:100%;}
 .table_1{margin-bottom:20px; border-top:2px solid #000; -webkit-box-sizing:border-box; box-sizing:border-box;}
