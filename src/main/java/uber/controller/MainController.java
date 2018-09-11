@@ -1,4 +1,4 @@
-package org.test.sample01;
+package uber.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,9 @@ import org.test.sample01.dto.board.Board;
 import org.test.sample01.service.board.BoardService;
 
 @Controller
-public class HomeController {
+public class MainController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
 	@Value("#{applicationProperties['file.upload.path']}") 
 	private String filePath;
