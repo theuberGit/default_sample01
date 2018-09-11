@@ -23,7 +23,7 @@ public class MainController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, Board board) {
 		
-		System.out.println(filePath);
+		System.out.println("2132312");
 		System.out.println(boardService.findAll(board));
 		
 		return "home";
