@@ -27,6 +27,4 @@
 	
 	<context:component-scan base-package="org.test.sample01" />
 	
-	
-	
 </beans:beans>
