@@ -24,11 +24,11 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean"
 		p:dataSource-ref="dataSource"
 		p:mapperLocations="classpath*:mapper/**/*.xml"
-		p:typeAliasesPackage="org.test.sample01.dto" />
+		p:typeAliasesPackage="uber.dto" />
 
 	<bean id="sqlScanner"
 		class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-		p:basePackage="org.test.sample01.dao"
+		p:basePackage="uber.dao"
 		p:sqlSessionFactoryBeanName="sqlSessionFactory">
 	</bean>
 
@@ -38,7 +38,7 @@
 		p:dataSource-ref="dataSource" />
 
 	<context:component-scan
-		base-package="org.test.sample01" use-default-filters="true">
+		base-package="uber" use-default-filters="true">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>

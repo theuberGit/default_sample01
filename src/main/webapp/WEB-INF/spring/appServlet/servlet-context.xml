@@ -25,6 +25,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="org.test.sample01" />
+	<context:component-scan base-package="uber" />
 	
 </beans:beans>

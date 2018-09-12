@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="uber.dao.notice.NoticeDao" >
+
+	<resultMap id="noticeMap" type="uber.dto.notice.Notice">
+		<result property="idx" column="IDX"/>
+		<result property="title" column="TITLE"/>
+		<result property="content" column="CONTENT"/>
+		<result property="regId" column="REG_ID"/>
+		<result property="regDate" column="REG_DATE"/>
+		<result property="uptId" column="UPT_ID"/>
+		<result property="uptDate" column="UPT_DATE"/>
+	</resultMap>
+	
+	<select id="findAll" resultMap="noticeMap">
+		SELECT IDX
+			  ,TITLE
+			  ,REG_ID
+			  ,REG_DATE
+			FROM TEST_NOTICE
+		WHERE 1=1
+	</select>
+
+</mapper>
