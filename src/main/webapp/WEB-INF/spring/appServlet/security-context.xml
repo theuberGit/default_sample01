@@ -14,7 +14,7 @@
         <!-- <intercept-url pattern="/*" access="ROLE_USER" /> -->
         
         <form-login
-        	login-page="/login"
+        	login-page="/membership/login"
         	username-parameter="user_id"
         	password-parameter="password"
         	authentication-failure-url="/loginfailure"

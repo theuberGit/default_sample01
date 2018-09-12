@@ -33,12 +33,12 @@
 				<div class="sec1">
 					<h3>로그인</h3>
 				</div>
-				<form id="loginForm" action="/j_spring_security_check.do" method="post">
+				<form id="loginForm" action="/j_spring_security_check" method="post">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<div class="sec2 last">
-						<input type="text" id="username" name="username" class="w468" title="아이디" maxlength="20" placeholder="아이디를 입력해 주세요.">
+						<input type="text" id="user_id" name="user_id" class="w468" title="아이디" maxlength="20" placeholder="아이디를 입력해 주세요.">
 						<input type="password" id="password" name="password" class="w468" title="비밀번호" maxlength="20" placeholder="비밀번호를 입력해 주세요.">
-						<div class="security">
+						<!-- <div class="security">
 							<div class="left">
 								<div id="captcha"><img alt="보안문자"/></div>
 							</div>
@@ -46,16 +46,16 @@
 								<p>프로그램을 이용한 자동입력 방지를 위해 보안절차를 거치고 있습니다.<br>왼쪽에 글자를 보이는 대로 입력해주세요.</p>
 								<button type="button" class="refresh_btn" id="refreshBtn">새로고침</button>
 							</div>
-						</div>
-						<input type="text" id="captchaInput" name="captchaInput" class="w468 mgb" title="자동입력방지 문자" placeholder="자동입력방지 문자를 입력해 주세요.">
+						</div> -->
+						<!--<input type="text" id="captchaInput" name="captchaInput" class="w468 mgb" title="자동입력방지 문자" placeholder="자동입력방지 문자를 입력해 주세요."> -->
 						<div class="btn_area">
 							<a href="javascript:void(0);" onclick="login();" class="commonBtn4 type2">로그인</a>
 						</div>
-						<ul class="join_list">
+						<!-- <ul class="join_list">
 							<li><a href="/membership/find-id.do">아이디찾기</a></li>
 							<li><a href="/membership/find-password.do">비밀번호 찾기</a></li>
 							<li><a href="/membership/join/type-selection.do">회원가입</a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</form>
 			</div>
