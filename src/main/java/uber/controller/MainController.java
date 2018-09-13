@@ -18,13 +18,13 @@ public class MainController {
 	
 	@Value("#{applicationProperties['file.upload.path']}") 
 	private String filePath;
-	@Autowired private BoardService boardService;
+	//@Autowired private BoardService boardService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, Board board) {
 		
-		System.out.println(filePath);
-		System.out.println(boardService.findAll(board));
+		System.out.println("2132312");
+		//System.out.println(boardService.findAll(board));
 		
 		return "home";
 	}

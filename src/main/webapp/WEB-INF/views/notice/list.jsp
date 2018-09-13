@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/resources/css/sub.css">
 <title>Spring Notice</title>
+<style>
+.list .btn_area_reg {text-align: right;}
+</style>
 </head>
 <body>
 <div class="list">
@@ -24,33 +27,25 @@
 					<table class="table_list_type blue">
 						<colgroup>
 							<col style="width:10%">
-							<col style="width:15%">
 							<col style="width:auto%">
+							<col style="width:15%">
 							<col style="width:20%">
 						</colgroup>
 						<thead>
 							<tr>
 								<th>번호</th>
-								<th>구분</th>
 								<th>제목</th>
+								<th>등록자</th>
 								<th>등록일</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${top }" var="top" varStatus="count">
-								<tr class="notice">
-								<td><a href="/support/news-view.do?idx=${top.idx }">-</a></td>
-								<td><a href="/support/news-view.do?idx=${top.idx }">${top.categoryStr }</a></td>
-								<td><a href="/support/news-view.do?idx=${top.idx }">${top.title }</a></td>
-								<td><a href="/support/news-view.do?idx=${top.idx }"><fmt:formatDate pattern="yyyy-MM-dd" value="${top.distributeDate }"/></a></td>
-							</tr>
-							</c:forEach>
 							<c:forEach items="${list }" var="list" varStatus="count">
 								<tr>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${pagination.totalItemCount - (pagination.currentPage -1) * pagination.itemPerPage - count.count +1}</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${list.categoryStr }</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${list.title }</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }"><fmt:formatDate pattern="yyyy-MM-dd" value="${list.distributeDate }"/> </a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${pagination.totalItemCount - (pagination.currentPage -1) * pagination.itemPerPage - count.count +1}</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${list.title }</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${list.regId }</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }"><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/> </a></td>
 								</tr>
 							</c:forEach>
 							<c:if test="${empty list }">
@@ -63,6 +58,9 @@
 					<%@ include file="../include/pagination.jsp" %>
 				</div>
 			</form>
+			<div class="btn_area_reg">
+				<a href="/notice/register" id="regBtn" class="commonBtn3 type6">등록하기</a>
+			</div>
 		</div>
 	</div>
 </div>

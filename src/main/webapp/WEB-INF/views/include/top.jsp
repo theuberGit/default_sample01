@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="cfn" uri="/WEB-INF/tlds/customFunctions.tld"%>
 <%@ taglib prefix="sp" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html >
 <html>
@@ -16,4 +17,3 @@
 <link rel="stylesheet" href="/resources/css/common.css">
 <link rel="shortcut icon" type="image/x-icon" href="/resources/images/common/favicon_16.ico">
 <link rel="shortcut icon" type="image/x-icon" href="/resources/images/common/favicon_32.ico">
-<sp:eval expression="@applicationProperties['daou.url.http.admin']" var="httpAdminUrl"/>
