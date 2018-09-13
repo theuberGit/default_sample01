@@ -42,10 +42,10 @@
 						<tbody>
 							<c:forEach items="${list }" var="list" varStatus="count">
 								<tr>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${pagination.totalItemCount - (pagination.currentPage -1) * pagination.itemPerPage - count.count +1}</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${list.title }</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }">${list.regId }</a></td>
-									<td><a href="/support/news-view.do?idx=${list.idx }"><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/> </a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${pagination.totalItemCount - (pagination.currentPage -1) * pagination.itemPerPage - count.count +1}</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${list.title }</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }">${list.regId }</a></td>
+									<td><a href="/notice/view.do?idx=${list.idx }"><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/> </a></td>
 								</tr>
 							</c:forEach>
 							<c:if test="${empty list }">

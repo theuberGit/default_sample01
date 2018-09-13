@@ -17,4 +17,3 @@
 <link rel="stylesheet" href="/resources/css/common.css">
 <link rel="shortcut icon" type="image/x-icon" href="/resources/images/common/favicon_16.ico">
 <link rel="shortcut icon" type="image/x-icon" href="/resources/images/common/favicon_32.ico">
-<sp:eval expression="@applicationProperties['daou.url.http.admin']" var="httpAdminUrl"/>

@@ -22,5 +22,31 @@
 			FROM TEST_NOTICE
 		WHERE 1=1
 	</select>
+	
+	<select id="findNotice" resultMap="noticeMap">
+		SELECT IDX
+			  ,TITLE
+			  ,CONTENT
+			  ,REG_ID
+			  ,REG_DATE
+			FROM TEST_NOTICE
+		WHERE 1=1
+			AND IDX = #{idx}
+	</select>
+	
+	<insert id="insertNotice">
+		INSERT INTO TEST_NOTICE (
+					IDX
+					,TITLE
+					,CONTENT
+					,REG_ID
+				)
+			VALUES (
+					#{idx}
+					,#{title}
+					,#{content}
+					,#{regId}
+				)
+	</insert>
 
 </mapper>

@@ -11,15 +11,9 @@
 <div class="support contact">
 	<div id="container">
 		<div class="content">
-			<form id="frm" action="/support/contactRequest.do" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-				<input type="hidden" name="cphone" />
-				<input type="hidden" name="email" title="이메일"/>
-				<input type="hidden" name="mktYn" title="마케팅수신동의"/>
+				<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 				<div class="sec section1">
-					<!-- <div class="table_tit">
-						<h3>상담내용</h3>
-					</div> -->
+				<form action="/notice/register-proc" method="post" enctype="multipart/form-data" id="frm">
 					<table class="table_1">
 						<tbody>
 							<tr>
@@ -28,7 +22,7 @@
 							</tr>
 							<tr>
 								<th class="required"><label for="workContent">내용</label></th>
-								<td><textarea name="contents" id="contents" title="내용 " cols="30" rows="10" class="write_box"></textarea></td>
+								<td><textarea name="content" id="content" title="내용 " cols="30" rows="10" class="write_box"></textarea></td>
 							</tr>
 							<tr>
 								<th scope="row" >파일첨부</th>
@@ -41,13 +35,19 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="btn_area">
-						<a href="#" id="regiCont" class="commonBtn6 type4">등록</a>
-					</div>
+				</form>
+				<div class="btn_area">
+					<a href="javascript:void(0);" onclick="formReg();" id="regiCont" class="commonBtn6 type4">등록</a>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 </div>
 </body>
+<%@ include file="../include/js.jsp" %>
+<script>
+function formReg(){
+	$('#frm').submit();
+}
+</script>
 </html>

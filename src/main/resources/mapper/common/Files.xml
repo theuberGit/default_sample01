@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+<mapper namespace="uber.dao.common.FilesDao">
+	
+	<resultMap id="FilesMap" type="uber.dto.common.Files">
+			<result property="fileIdx" column="FILE_IDX" />
+			<result property="masterIdx" column="MASTER_IDX" />
+			<result property="originalFileName" column="ORIGINAL_FILENAME" />
+			<result property="savedFileName" column="SAVED_FILENAME" />
+			<result property="type" column="TYPE" />
+	</resultMap>
+	
+ 	<select id="findAll" resultMap="FilesMap">
+ 		SELECT FILE_IDX
+				  ,MASTER_IDX
+				  ,ORIGINAL_FILENAME
+				  ,SAVED_FILENAME
+				  ,TYPE
+ 		  FROM TEST_FILES_DATA
+ 		WHERE FILE_IDX = #{fileIdx}	 
+ 	</select>
+ 	
+ 	<insert id="insertFile" parameterType="Files" useGeneratedKeys="true" keyProperty="fileIdx">
+	 		INSERT INTO TEST_FILES_DATA (
+						 MASTER_IDX
+						,ORIGINAL_FILENAME
+						,SAVED_FILENAME
+						,TYPE
+						)
+	 		VALUES (
+						 #{masterIdx}
+					    ,#{originalFileName}
+					    ,#{savedFileName}
+					    ,#{type}
+						)
+ 	</insert>
+ 	
+ 	<update id="updateFile" parameterType="Files">
+ 		UPDATE TEST_FILES_DATA
+ 			 SET ORIGINAL_FILENAME = #{originalFileName}
+				  ,SAVED_FILENAME = #{savedFileName}
+				  ,TYPE = #{type}
+ 		 WHERE FILE_IDX = #{fileIdx}
+ 	</update>
+ 	
+ 	<update id="updateMasterIdx">
+ 		UPDATE TEST_FILES_DATA
+			 SET MASTER_IDX = #{masterIdx}
+ 		 WHERE FILE_IDX IN 
+ 			<foreach collection="fileIdx" separator="," item="fileIdx"  open="(" close=")">
+ 				#{fileIdx}	  			
+ 			</foreach>
+ 	</update>
+ 	
+ 	<delete id="deleteFileByFileIdx">
+ 		DELETE FROM TEST_FILES_DATA
+ 		 WHERE FILE_IDX = #{fileIdx}	
+ 	</delete>
+ 	
+ 	<select id="findFileByFileIdx" resultMap="FilesMap">
+ 		SELECT FILE_IDX
+				  ,MASTER_IDX
+				  ,ORIGINAL_FILENAME
+				  ,SAVED_FILENAME
+				  ,TYPE
+ 		  FROM TEST_FILES_DATA
+ 		WHERE FILE_IDX = #{fileIdx}
+ 	</select>
+ 	
+ 	<select id="findFilesByMasterIdx" resultMap="FilesMap">
+ 		SELECT FILE_IDX
+				  ,MASTER_IDXs
+				  ,ORIGINAL_FILENAME
+				  ,SAVED_FILENAME
+				  ,TYPE
+ 		  FROM TEST_FILES_DATA
+ 		WHERE MASTER_IDX = #{masterIdx}
+ 	</select>
+ 	
+ 	<select id="findFilesByMasterIdxAndType" resultMap="FilesMap">
+ 		SELECT FILE_IDX
+				  ,MASTER_IDX
+				  ,ORIGINAL_FILENAME
+				  ,SAVED_FILENAME
+				  ,TYPE
+ 		  FROM TEST_FILES_DATA
+ 		WHERE MASTER_IDX = #{masterIdx}
+ 			AND TYPE = #{type}
+ 	</select>
+
+	<select id="findFileSequence" resultType="Integer">
+		SELECT get_sequence('master_idx')
+	</select>	
+</mapper>	
