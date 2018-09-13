@@ -8,7 +8,8 @@
 <h1>
 	Hello world!  
 </h1>
-<!-- 주석추가 -->
+<!-- ì£¼ìì¶ê° -->
 <P>  The time on the server is ${serverTime}. </P>
+<a href="<%= request.getContextPath() %>/j_spring_security_logout">[로그아웃]</a>
 </body>
 </html>
