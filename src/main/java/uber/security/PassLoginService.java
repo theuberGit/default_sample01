@@ -24,7 +24,7 @@ public class PassLoginService implements UserDetailsService {
 		member.setUsername(username);
 		member.setPassword(passwordEncoder.encode(username));
 		member.getAuthorities();
-		//System.out.println(show_password);
+		System.out.println("pass");
 		
 		return member;
 	}

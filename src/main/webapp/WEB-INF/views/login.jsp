@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <%@ include file="../include/top.jsp" %> --%>
+<%@ include file="include/top.jsp" %>
 <meta property="og:title" content="">
 <meta property="og:description" content="">
 <meta name="description" content="">
@@ -36,7 +36,7 @@
 				<form id="loginForm" action="/j_spring_security_check" method="post">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					<div class="sec2 last">
-						<input type="text" id="user_id" name="user_id" class="w468" title="아이디" maxlength="20" placeholder="아이디를 입력해 주세요.">
+						<input type="text" id="username" name="username" class="w468" title="아이디" maxlength="20" placeholder="아이디를 입력해 주세요.">
 						<input type="password" id="password" name="password" class="w468" title="비밀번호" maxlength="20" placeholder="비밀번호를 입력해 주세요.">
 						<!-- <div class="security">
 							<div class="left">
@@ -66,7 +66,7 @@
 	<!-- //footer -->
 </div>
 <!-- //wrap -->
-<%-- <%@ include file="../include/js.jsp" %> --%>
+<%@ include file="include/js.jsp" %>
 <script src="/resources/js/sub.js"></script>
 </body>
 <script>
