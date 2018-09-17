@@ -70,6 +70,10 @@
 <script src="/resources/js/sub.js"></script>
 </body>
 <script>
+if('${msg}' != ''){
+	alert('${msg}');
+}
+
 create();
 $("#refreshBtn").click(function(e){
     e.preventDefault();
