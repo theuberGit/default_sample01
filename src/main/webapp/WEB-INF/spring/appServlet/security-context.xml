@@ -17,6 +17,7 @@
 	<http auto-config="true" use-expressions="true">
 	  <intercept-url pattern="/login" access="permitAll" /> <!-- 로그인페이지 제외 -->
 	  <intercept-url pattern="/loginFailure" access="permitAll" /> <!-- 로그인 실패 페이지 제외 -->
+	  <intercept-url pattern="/signout" access="permitAll" /> <!-- 로그아웃 페이지 제외 -->
 	  <intercept-url pattern="/notice/**" access="hasRole('ROLE_USER')" />
       <intercept-url pattern="/*" access="hasRole('ROLE_USER')" />
         
@@ -33,7 +34,7 @@
         	logout-success-url="/login"
         	logout-url="/signout"
         />
-        	
+        <csrf disabled="true"/>	
     </http>
        
     <authentication-manager>

@@ -12,8 +12,5 @@
 <!-- ì£¼ìì¶ê° -->
 <P>  The time on the server is ${serverTime}. </P>
 
-<form action="signout" method="post">
-<input type="button" onclick="submit();" value="로그아웃"> 
-</form>
 </body>
 </html>
